@@ -8,8 +8,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.util.Log;
 import android.os.Handler;
+import android.util.Log;
 
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Callback;
@@ -259,6 +259,13 @@ public class RNOneSignal extends ReactContextBaseJavaModule implements Lifecycle
     }
 
     private void notifyNotificationOpened(Bundle bundle) {
+        // try {
+        //     JSONObject jsonObject = new JSONObject(bundle.getString("result"));
+        //     sendEvent("OneSignal-remoteNotificationOpened",  RNUtils.jsonToWritableMap(jsonObject));
+        // } catch(Throwable t) {
+        //     t.printStackTrace();
+        // }
+
         try {
             Handler handler = new Handler();
             // don't forget to add the "final" keyword here
